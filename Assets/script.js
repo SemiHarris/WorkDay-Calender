@@ -101,3 +101,43 @@ var backgroundColor = function (){
        }
     }
 };
+
+/*Saves the text to the local storage*/
+var save = function(){
+    timeTextarea = []
+
+    for (var i = 0; i < time.length; i++){
+
+        var timeText = $('.timeText' + i)
+        .val()
+        .trim();
+    
+        timeTextarea.push(timeText);
+    }
+
+    localStorage.setItem("timeTextarea", JSON.stringify(timeTextarea));
+}
+
+/*Load the saved text*/
+var load = function(){
+    timeTextarea = localStorage.getItem("timeTextarea");
+    timeTextarea = JSON.parse(timeTextarea);
+
+    
+    if (!timeTextarea){
+        save()
+    }
+
+    for (var i = 0; i < timeTextarea.length; i++){
+
+        var textarea = $('.timeText' + i)
+        var savedText = timeTextarea[i];
+
+        $(textarea).text(savedText);
+
+    }
+}
+
+
+displayCurrent()
+displayWorkHour()
