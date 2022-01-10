@@ -8,5 +8,5 @@
 
 - This can be run on any basic web browser
 
-![Wprk-Day-Schdule](Assets\images\Untitled1.png)
+![Wprk-Day-Schdule](https://raw.github.com/{USERNAME}/{REPOSITORY}/{BRANCH}/{PATH})
 
